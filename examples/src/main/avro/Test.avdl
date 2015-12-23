@@ -1,0 +1,18 @@
+@namespace("test")
+protocol Test {
+  enum Status {
+    OK,
+    ERROR
+  }
+
+  record TestRecord {
+    string id;
+    Status status;
+    union {null, string} stringOrNull = null;
+  }
+
+  error TestException {
+    string message;
+    int errorCode = -1;
+  }
+}
